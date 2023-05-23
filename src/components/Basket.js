@@ -22,7 +22,7 @@ const Basket = (props) => {
 
     <div className="modal-container">
 
-        <a href="#" className={props.basketActive ? 'overlay active' : 'overlay'}></a>
+        <div className={props.basketActive ? 'overlay active' : 'overlay'}></div>
 
         <div className={ props.basketActive ? 'basket active' : 'basket'}>
         
@@ -32,18 +32,19 @@ const Basket = (props) => {
         
         {localStorage.length === 0 && <p className="message-empty"> У вас ще немає замовлених товарів </p>}
 
-        {localStorage.length != 0 &&
+        {localStorage.length !== 0 &&
             <div>
                 {props.storage.map(key => 
                     (<div key={key} className='basket-item-container'>
                         <p className='item-name'>{itemInBasket(key).name}</p>
-                            <img src={itemInBasket(key).img}/>
+                            <img src={itemInBasket(key).img} alt="busket"/>
                             <span className='item-price'>Ціна: {itemInBasket(key).price}</span>
                             <button onClick={() => removeFromBasket(key) } className='remove-btn'></button>
                     </div>
 
                     ))}
                 <p className="sum">Сума: {calculatePrice()}</p>
+                <button>Перейти до сплати</button>
             </div>
         }
         </div>
