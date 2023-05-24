@@ -22,7 +22,7 @@
     right: 50%;
     bottom: -20%;
     transform:translate(50%, -50%);
-    width: 400px;
+    width: 600px;
     border-radius: 12px;
     background-color:  rgb(211, 211, 211);
     overflow-y: scroll;

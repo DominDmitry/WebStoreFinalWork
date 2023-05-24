@@ -1,6 +1,7 @@
 import React from "react";
 import "./basket.css";
 import { useState } from "react";
+import Payment from './Payment';
 
 const Basket = (props) => {
 
@@ -17,6 +18,7 @@ const Basket = (props) => {
         props.storage.map(key => ( priceCounter = priceCounter + Number(itemInBasket(key).price.split(' ').join(''))));
         return priceCounter;
     };
+    const [paymentActive, setpaymentActive] = useState(false);
 
     return(
 
@@ -44,7 +46,8 @@ const Basket = (props) => {
 
                     ))}
                 <p className="sum">Сума: {calculatePrice()}</p>
-                <button>Перейти до сплати</button>
+                <button className='registration' onClick={()=>setpaymentActive(!paymentActive)}>перейти до сплати</button>
+                <Payment active={paymentActive} setActive={setpaymentActive} />
             </div>
         }
         </div>
