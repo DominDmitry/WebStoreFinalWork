@@ -69,8 +69,8 @@ const Payment = ({active, setActive}) => {
                         <input type="text" value={cardNumber} onChange={handleCardNumberChange} required></input>
                     </div>
                     <div>
-                        <label htmlFor="cardDate">Строк дії картки:</label>
-                        <input type="date" pattern="\d{2}-\d{2}" value={cardDate} onChange={handleCardDateChange} required></input>
+                        <label htmlFor="cardDate">Строк дії картки у форматі мм/рр:</label>
+                        <input type="text"  value={cardDate} onChange={handleCardDateChange} required></input>
                     </div>
                     <div>
                     <label htmlFor="userCVV">CVV:</label>
