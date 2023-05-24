@@ -63,7 +63,7 @@ const Payment = ({active, setActive}) => {
             <button className="close-registration-btn" onClick={() => setActive(false)}></button>
 
                 <form className="paymentForm" onSubmit={handleSubmit}>
-                    <h2>Регистрация</h2>
+                    <h2>Оформлення замовлення</h2>
                     <div>
                         <label htmlFor="cardNumber">Номер картки:</label>
                         <input type="text" value={cardNumber} onChange={handleCardNumberChange} required></input>
