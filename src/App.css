@@ -177,3 +177,6 @@ button:hover{
   padding: 3px;
   width: 15px;
 }
+.paymentForm{
+  height: 400px;
+}

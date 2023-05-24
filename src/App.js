@@ -53,7 +53,7 @@ function App() {
                 </li>
                 <li>
                 <button className="basketBtn" onClick={() => setBasketActive(!basketActive)}> 
-                    {storage.length != 0 && <span className='items-in-basket-counter'>{storage.length}</span>}
+                    {storage.length !== 0 && <span className='items-in-basket-counter'>{storage.length}</span>}
                 </button>     
                 </li>
                 <li>

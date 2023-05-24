@@ -9,6 +9,7 @@ const Payment = ({active, setActive}) => {
   const [userName, setUserName] = useState('');
   const [userCity, setUserCity] = useState('');
   const [userPostNumber, setUserPostNumber] = useState('');
+  const [userPhoneNumber, setUserPhoneNumber] = useState('');
  
   const handleCardNumberChange = (event) => {
     setcardNumber(event.target.value);
@@ -30,6 +31,9 @@ const Payment = ({active, setActive}) => {
   const handleUserPostNumberchange = (event) => {
     setUserPostNumber(event.target.value);
   };
+  const handleUserPhoneNumberchange = (event) => {
+    setUserPhoneNumber(event.target.value);
+  };
  
 
   const handleSubmit = (event) => {
@@ -41,8 +45,8 @@ const Payment = ({active, setActive}) => {
     localStorage.setItem('userName', userName);
     localStorage.setItem('userCity', userCity);
     localStorage.setItem('userPostNumber', userPostNumber);
+    localStorage.setItem('userPhoneNumber', userPhoneNumber);
     
-
   };
     
     return (
@@ -58,7 +62,7 @@ const Payment = ({active, setActive}) => {
 
             <button className="close-registration-btn" onClick={() => setActive(false)}></button>
 
-                <form onSubmit={handleSubmit}>
+                <form className="paymentForm" onSubmit={handleSubmit}>
                     <h2>Регистрация</h2>
                     <div>
                         <label htmlFor="cardNumber">Номер картки:</label>
@@ -75,6 +79,10 @@ const Payment = ({active, setActive}) => {
                     <div>
                     <label htmlFor="userName">ПІБ:</label>
                     <input type="text" value={userName} onChange={handleUserNamechange} required></input>
+                    </div>
+                    <div>
+                    <label htmlFor="userPhoneNumber">Номер телефону починаючи з +380....:</label>
+                    <input type="text" value={userPostNumber} onChange={handleUserPhoneNumberchange} required></input>
                     </div>
                     <div>
                     <label htmlFor="userCity">Місто:</label>
